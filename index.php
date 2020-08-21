@@ -63,4 +63,4 @@ if(isset($_POST['name'])){
     <script src="index.js"></script>
 </body>
 </html>
-//farji example
+
