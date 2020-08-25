@@ -9,15 +9,52 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <title>Web Clock</title>
-    <script>
+     <script>
         let a;
         let date;
         let time;
+        // let hrs;
+        // let min;
+        let sec;
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
         setInterval(() => {
         a=new Date();
         date= a.toLocaleDateString(undefined, options);
-        time= a.getHours()+':'+a.getMinutes()+':'+a.getSeconds();
+        // time= a.getHours()+':'+a.getMinutes()+':'+a.getSeconds();
+        hrs = a.getHours();
+        min = a.getMinutes();
+        sec = a.getSeconds();
+        // if(hrs<10|| min<10 || sec<10){
+        // if(hrs<10){
+        //     hrs = '0'+hrs;
+        //     // min = '0'+min;
+        //     // sec = '0'+sec;
+        //     // return sec;
+        //     time= hrs+':'+min+':'+sec;
+        //     // time= a.getHours()+':'+a.getMinutes()+':'+sec;
+        //     document.getElementById('time').innerHTML= time+"<br> on "+date;
+        // }
+        // else if(min<10){
+        //     // hrs = '0'+hrs;
+        //     min = '0'+min;
+        //     // sec = '0'+sec;
+        //     // return sec;
+        //     time= hrs+':'+min+':'+sec;
+        //     // time= a.getHours()+':'+a.getMinutes()+':'+sec;
+        //     document.getElementById('time').innerHTML= time+"<br> on "+date;
+        // }
+        if(sec<10){
+            // hrs = '0'+hrs;
+            // min = '0'+min;
+            sec = '0'+sec;
+            // return sec;
+            time= hrs+':'+min+':'+sec;
+            // time= a.getHours()+':'+a.getMinutes()+':'+sec;
+            document.getElementById('time').innerHTML= time+"<br> on "+date;
+        }
+        // }
+        time= hrs+':'+min+':'+sec;
+        time= a.getHours()+':'+a.getMinutes()+':'+sec;
         document.getElementById('time').innerHTML= time+"<br> on "+date;
         }, 1000);
     </script>
